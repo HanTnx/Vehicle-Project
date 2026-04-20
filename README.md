@@ -38,7 +38,7 @@ Vehicle Detection, Classification & Traffic Analysis
 pip install torch torchvision transformers ultralytics torchattacks opencv-python pillow numpy pyyaml vllm requests
 ```
 
-**Hardware:** NVIDIA GeForce RTX 4070 Ti (12 GB), CUDA 12.6
+**Hardware:** NVIDIA GeForce RTX 4090 Ti (12 GB), CUDA 12.6, vLLM 0.19.0
 
 ## Part 1 — Object Detection and Classifier
 
