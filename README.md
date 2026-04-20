@@ -8,7 +8,8 @@ Vehicle Detection, Classification & Traffic Analysis
 ├── 2.adversarial_attacks.ipynb          # Part 2: Adversarial attacks (whitebox + blackbox + pipeline)
 ├── 3.VLM-integration-traffic-analysis.ipynb  # Part 3: Gemma 4 VLM traffic analysis via vLLM
 │
-├── detection_output_v2.mp4             # Output video with detection + classification annotations
+├── detection_output_v2.mp4             # Output video with detection
+├── detection_classifier_clip_output_v2.mp4             # Output video with detection and clip classifier  
 │
 ├── adv_results_clip/                   # Adversarial attack outputs on CLIP classifier
 │   ├── FGSM/                           #   Sample adversarial images (FGSM)
