@@ -92,8 +92,8 @@ Gemma 4 E4B served locally via vLLM analyzes sampled frames from SAM3-segmented 
 
 ## How to Run
 
-1. **Detection:** Run `1.1.vehicle_detection.ipynb` — trains YOLOv26s
-2. **Classification + Pipeline:** Run `1.2.vehicle_classification.ipynb` — trains CLIP classifier, generates `detection_output_v2.mp4`
+1. **Detection:** Run `1.1.vehicle_detection.ipynb` — trains YOLOv26s, generates `detection_output_v2.mp4`
+2. **Classification + Pipeline:** Run `1.2.vehicle_classification.ipynb` — trains CLIP classifier, generates `detection_classifier_clip_output_v2.mp4`
 3. **Adversarial Attacks:** Run `2.adversarial_attacks.ipynb` — generates attack results in `adv_results_clip/` and `adv_pipeline_analysis/`
 4. **VLM Analysis:** Start vLLM server, then run `3.VLM-integration-traffic-analysis.ipynb`
 
