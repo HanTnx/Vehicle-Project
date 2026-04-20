@@ -1,0 +1,105 @@
+{
+  "config": {
+    "n_frames": 121,
+    "eps": 0.03137254901960784,
+    "pgd_steps": 20,
+    "iou_threshold": 0.5
+  },
+  "scenarios": [
+    {
+      "scenario": "Clean Baseline",
+      "aggregate": {
+        "n_frames": 121,
+        "total_det_clean": 3222,
+        "total_det_adv": 3222,
+        "total_matched": 3222,
+        "total_lost": 0,
+        "total_new": 0,
+        "mean_iou_matched": 1.0,
+        "mean_conf_clean": 0.7839839187535372,
+        "mean_conf_adv": 0.7839839187535372,
+        "cls_changed": 0,
+        "cls_total": 0,
+        "det_recall": 1.0,
+        "det_loss_rate": 0.0,
+        "cls_flip_rate": 0.0
+      }
+    },
+    {
+      "scenario": "Frame Attack + FGSM",
+      "aggregate": {
+        "n_frames": 121,
+        "total_det_clean": 3222,
+        "total_det_adv": 848,
+        "total_matched": 794,
+        "total_lost": 2428,
+        "total_new": 54,
+        "mean_iou_matched": 0.9115091582503185,
+        "mean_conf_clean": 0.7839839187535372,
+        "mean_conf_adv": 0.6994145684991001,
+        "cls_changed": 0,
+        "cls_total": 0,
+        "det_recall": 0.24643078833022966,
+        "det_loss_rate": 0.7535692116697703,
+        "cls_flip_rate": 0.0
+      }
+    },
+    {
+      "scenario": "Frame Attack + PGD",
+      "aggregate": {
+        "n_frames": 121,
+        "total_det_clean": 3222,
+        "total_det_adv": 1032,
+        "total_matched": 961,
+        "total_lost": 2261,
+        "total_new": 71,
+        "mean_iou_matched": 0.9115582646045848,
+        "mean_conf_clean": 0.7839839187535372,
+        "mean_conf_adv": 0.7089308283545754,
+        "cls_changed": 0,
+        "cls_total": 0,
+        "det_recall": 0.2982619490999379,
+        "det_loss_rate": 0.701738050900062,
+        "cls_flip_rate": 0.0
+      }
+    },
+    {
+      "scenario": "Crop Attack + FGSM",
+      "aggregate": {
+        "n_frames": 121,
+        "total_det_clean": 3222,
+        "total_det_adv": 3222,
+        "total_matched": 3222,
+        "total_lost": 0,
+        "total_new": 0,
+        "mean_iou_matched": 1.0,
+        "mean_conf_clean": 0.7839839187535372,
+        "mean_conf_adv": 0.7839839187535372,
+        "cls_changed": 2097,
+        "cls_total": 3222,
+        "det_recall": 1.0,
+        "det_loss_rate": 0.0,
+        "cls_flip_rate": 0.6508379888268156
+      }
+    },
+    {
+      "scenario": "Crop Attack + PGD",
+      "aggregate": {
+        "n_frames": 121,
+        "total_det_clean": 3222,
+        "total_det_adv": 3222,
+        "total_matched": 3222,
+        "total_lost": 0,
+        "total_new": 0,
+        "mean_iou_matched": 1.0,
+        "mean_conf_clean": 0.7839839187535372,
+        "mean_conf_adv": 0.7839839187535372,
+        "cls_changed": 1906,
+        "cls_total": 3222,
+        "det_recall": 1.0,
+        "det_loss_rate": 0.0,
+        "cls_flip_rate": 0.5915580384854128
+      }
+    }
+  ]
+}

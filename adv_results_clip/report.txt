@@ -1,0 +1,11 @@
+Model: CLIP fine-tuned (/mnt/c/Users/Admin/Downloads/2026-ResearchWork/SmartM2M_AdmissionTest/clip_finetuned_1500_base/best_model.pt)
+Clean accuracy: 0.9000
+N_samples: 50, eps: 0.0314
+
+Attack       Type       AdvAcc     ASR       
+FGSM         whitebox   0.1600     0.8400    
+PGD          whitebox   0.0000     1.0000    
+CW           whitebox   0.0600     0.9400    
+Square       blackbox   0.1000     0.9000    
+Pixle        blackbox   0.7600     0.2400    
+OnePixel     blackbox   0.8400     0.1600    

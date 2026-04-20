@@ -1,0 +1,391 @@
+{
+  "video": "2026-04-15 11-00-45.mp4",
+  "fps": 30.0,
+  "total_frames": 6023,
+  "resolution": "1280x720",
+  "frame_stride": 200,
+  "model": "google/gemma-4-E4B-it",
+  "server": "vLLM",
+  "server_url": "http://localhost:8000/v1",
+  "note": "Input video pre-processed with SAM3 segmentation (blue masks on vehicles)",
+  "output_fields": [
+    "traffic_description",
+    "traffic_density_description",
+    "traffic_abnormal_incident_description"
+  ],
+  "system_prompt": "You are an expert traffic surveillance analyst AI.\n\nIMPORTANT CONTEXT: \n- This image is from a traffic camera that has been pre-processed with SAM3 instance segmentation.\n- All detected vehicles are highlighted with BLUE OVERLAY MASKS on the image.\n- The blue-colored regions represent segmented vehicles (cars, motorcycles, trucks, buses, scooters).\n- Use these blue masks to accurately count and classify vehicles.\n\nYour task is to analyze the traffic scene and provide EXACTLY 3 sections of analysis.\n\nRespond ONLY with a valid JSON object using this EXACT structure (no markdown, no extra text, no ```json wrapper):\n\n{\n  \"traffic_description\": \"<Comprehensive description of the traffic scene: total vehicle count based on blue masks, types of vehicles (cars, motorcycles, trucks, buses), their positions on the road, movement patterns, lane usage, and overall traffic flow direction. Be specific about numbers.>\",\n\n  \"traffic_density_description\": \"<Rate the density as one of: Low / Medium / High / Congested. Then explain WHY: describe the spacing between vehicles, road capacity utilization percentage estimate, queue lengths, and compare to typical urban traffic patterns. Mention if traffic is free-flowing, slow-moving, stop-and-go, or gridlocked.>\",\n\n  \"traffic_abnormal_incident_description\": \"<Describe ANY abnormal incidents or safety concerns observed: accidents, stalled vehicles, wrong-way driving, illegal parking, pedestrians in roadway, debris/obstacles, unusual congestion patterns, emergency vehicles, traffic signal violations. If NO abnormal incidents are detected, explicitly state 'No abnormal incidents detected' and briefly note the general safety condition.>\"\n}",
+  "analyses": [
+    {
+      "frame_index": 0,
+      "timestamp_sec": 0.0,
+      "frame_file": "frame_000000.jpg",
+      "inference_time_sec": 7.43,
+      "analysis": {
+        "traffic_description": "The traffic scene captures a multi-lane road with moderate traffic flow. There is a total of 15 detectable vehicles highlighted by blue masks. Moving away from the camera (in the visible lanes), there are several cars and motorcycles distributed across the road. On the right side, nearer to the curb/sidewalk, there are several vehicles, including at least two motorcycles and a few cars, seemingly maneuvering or parked. The overall flow suggests movement away from the viewer in the main lanes.",
+        "traffic_density_description": "Medium. The vehicles are spaced reasonably, allowing for consistent movement, but there is enough presence on the road to prevent it from being described as low. Road capacity utilization appears to be in the mid-range, and traffic appears to be moving at a steady, non-congested pace.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears acceptable with vehicles adhering to lanes, although the area near the sidewalk shows several stopped or slow-moving vehicles."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 200,
+      "timestamp_sec": 6.67,
+      "frame_file": "frame_000200.jpg",
+      "inference_time_sec": 6.91,
+      "analysis": {
+        "traffic_description": "There are a total of 18 vehicles detected in the traffic scene. The vehicles include several cars (e.g., a white sedan near the left), motorcycles/scooters (numerous, scattered across lanes, including one in the foreground and several further back), and a few other light vehicles. The traffic appears to be moving generally away from the camera's position on the main road. Lane usage is mixed, with vehicles distributed across multiple lanes, particularly the central and right-hand lanes where more traffic is concentrated. The flow is moderately directional, with vehicles occupying various positions down the road.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough to suggest moderate movement rather than heavy stop-and-go conditions, but the number of vehicles utilizing the road capacity indicates active use. The flow appears to be moving, although not necessarily at free-flowing speeds, typical for a moderately busy urban artery during morning hours.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears standard for a moderately busy road, with vehicles adhering to the road infrastructure."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 400,
+      "timestamp_sec": 13.33,
+      "frame_file": "frame_000400.jpg",
+      "inference_time_sec": 6.48,
+      "analysis": {
+        "traffic_description": "There are a total of 12 blue-masked vehicles detected in the scene. The vehicles include multiple cars, several motorcycles, and potentially a few other light vehicles. The majority of traffic is moving away from the camera, traveling down the main road. Vehicles are spread across both lanes visible in the frame. On the left side, several cars (e.g., a white one near the foreground) are visible. In the middle and far lanes, numerous motorcycles and cars are flowing. One individual on a scooter/motorcycle is visible in the center-left foreground, appearing to navigate the roadside or slow-moving traffic flow.",
+        "traffic_density_description": "Medium. The vehicles are present across the visible lanes but are not tightly packed or forming significant queues. The spacing allows for relatively steady movement, suggesting traffic is generally flowing, though not entirely free-flowing, which is typical for an urban road during this time of day.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The traffic appears to be moving within expected parameters for an urban setting, with no visible accidents, stalled vehicles, or immediate safety hazards."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 600,
+      "timestamp_sec": 20.0,
+      "frame_file": "frame_000600.jpg",
+      "inference_time_sec": 6.38,
+      "analysis": {
+        "traffic_description": "The traffic scene depicts a multi-lane road with moderate vehicle presence. There are 18 blue-masked vehicles detected. These vehicles primarily consist of cars, with several motorcycles and a few vans/small trucks mixed in. Traffic appears to be moving generally away from the camera along the main road. Lanes are utilized by vehicles flowing in both visible directions, although the flow seems dominated by the lane closest to the camera's right side. Specific vehicles include several passenger cars, multiple motorcycles scattered throughout the flow, and a few larger vehicles like small trucks or vans further up the road.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough that they are not bumper-to-bumper, allowing for decent flow, but there is a consistent volume of vehicles occupying the road capacity. Traffic appears to be moving at a steady, non-stop pace, characteristic of moderate urban flow rather than free-flowing or congested conditions.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears normal based on the visual evidence; all vehicles seem to be operating within the lanes."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 800,
+      "timestamp_sec": 26.67,
+      "frame_file": "frame_000800.jpg",
+      "inference_time_sec": 6.72,
+      "analysis": {
+        "traffic_description": "There are 21 vehicles detected in the traffic scene, highlighted by blue segmentation masks. The majority of the traffic is moving away from the camera in the main roadway. Vehicle types include numerous cars (approximately 15-17), a few motorcycles/scooters (around 4), and possibly one or two larger vehicles like vans or small trucks interspersed among the cars. Traffic appears to be flowing in two directions, although the main focus is on the lanes moving away from the viewer. Vehicles are generally occupying available lanes as they proceed down the road.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough that they are not bumper-to-bumper, indicating free-flowing or moderate movement. Road capacity utilization appears to be around 60-70% based on the visible traffic volume, which is typical for a busy urban thoroughfare during off-peak hours.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears normal, with vehicles adhering to the road structure. One traffic sign indicating a 'No Stopping/No Parking' zone is visible on the right side."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 1000,
+      "timestamp_sec": 33.33,
+      "frame_file": "frame_001000.jpg",
+      "inference_time_sec": 5.43,
+      "analysis": {
+        "traffic_description": "A moderate volume of traffic is visible moving along the multi-lane road. There are approximately 17 to 19 blue-masked vehicles detected. The vehicles consist mainly of cars and motorcycles, with a few larger vehicles possibly present or partially visible further up the road. The traffic flow appears generally unidirectional away from the camera viewpoint, occupying multiple lanes. Several vehicles are visible in the middle ground and distance, indicating active movement.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough that they are not bumper-to-bumper, suggesting traffic is generally free-flowing or moving at moderate speeds. The road capacity seems reasonably utilized, but there is clear room between vehicles, preventing it from being classified as congested or stop-and-go.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears normal based on the visible traffic movement patterns."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 1200,
+      "timestamp_sec": 40.0,
+      "frame_file": "frame_001200.jpg",
+      "inference_time_sec": 6.27,
+      "analysis": {
+        "traffic_description": "There are a total of 16 vehicles detected in the traffic scene. The majority of vehicles are cars, with several motorcycles and a few vans/trucks visible. Vehicles are primarily moving in a single direction down the main road from the background towards the foreground, although some parked or slower vehicles are present near the roadside. Lane usage appears standard for the road width, with traffic generally flowing in one direction. Most vehicles are clustered in the center of the carriageway.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough that they are not bumper-to-bumper, suggesting a moderate flow of traffic. Road capacity utilization seems to be around 50-60%. Traffic appears to be moving at a steady, though not necessarily high, speed, indicative of typical urban flow rather than gridlock.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears normal, with vehicles operating within the visible traffic lanes. There is a pedestrian in the foreground on the sidewalk/shoulder area, which is normal."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 1400,
+      "timestamp_sec": 46.67,
+      "frame_file": "frame_001400.jpg",
+      "inference_time_sec": 7.05,
+      "analysis": {
+        "traffic_description": "There are a total of 13 vehicles detected in the scene based on the blue masks. The traffic flows primarily from the background towards the foreground along the main road. The vehicles consist mainly of cars (at least 9), with several scooters/motorcycles (at least 3), and one small truck or larger vehicle visible in the distance. Most vehicles appear to be utilizing the lanes moving away from the camera, while a few are maneuvering or stopped near the curb on the right. The flow seems directional along the multi-lane road.",
+        "traffic_density_description": "Medium. The spacing between most vehicles is adequate, allowing for smooth movement, but there is a noticeable clustering of vehicles in the middle lanes. Road capacity utilization seems to be around 60-70%. The traffic appears to be moving at a steady, somewhat controlled pace rather than being completely free-flowing, suggesting moderate urban traffic conditions.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The traffic appears to be moving within expected parameters for an urban setting, with no visible signs of accidents, illegal stops, or safety violations."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 1600,
+      "timestamp_sec": 53.33,
+      "frame_file": "frame_001600.jpg",
+      "inference_time_sec": 6.82,
+      "analysis": {
+        "traffic_description": "There are 15 blue-masked vehicles detected in the traffic scene. The vehicles are a mix of cars, scooters/motorcycles, and possibly one small van/SUV. Most vehicles are moving along the main asphalt road, which appears to be a two-way street or a multi-lane road with traffic flowing in both directions. A white SUV is prominent in the left lane moving away from the camera. Several scooters and motorcycles are distributed throughout the frame, some moving in the main flow and others closer to the side. Traffic appears relatively spread out across the visible lanes.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough that there is no immediate gridlock or heavy queueing visible, suggesting the road is utilizing a moderate percentage of its capacity. The traffic flow appears relatively free-flowing, although some vehicles are clustered in the middle distance, indicating typical urban mixed traffic movement rather than smooth highway conditions.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears standard for an urban area, with vehicles operating within the visible lanes."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 1800,
+      "timestamp_sec": 60.0,
+      "frame_file": "frame_001800.jpg",
+      "inference_time_sec": 6.22,
+      "analysis": {
+        "traffic_description": "There are a total of 17 blue-masked vehicles detected in the scene. The vehicles include several cars, at least one small truck or larger vehicle in the distance, and multiple motorcycles/scooters. The vehicles are generally moving away from the camera along the main road, suggesting a primary flow in one direction. Cars occupy the main lanes, while motorcycles are dispersed, some moving alongside the lanes and others parked or slowing near the curb. Traffic flow appears continuous down the visible stretch of the road.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough that the road capacity is not fully saturated, but there is a consistent presence of traffic, particularly along the main carriageway. It is currently free-flowing with moderate speed, typical for an urban arterial road during the observed time.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The road appears safe, with vehicles maintaining their lanes and normal traffic movement observed."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 2000,
+      "timestamp_sec": 66.67,
+      "frame_file": "frame_002000.jpg",
+      "inference_time_sec": 6.19,
+      "analysis": {
+        "traffic_description": "The traffic scene shows a multi-lane urban road with vehicles moving in both directions. Based on the blue segmentation masks, a total of 23 vehicles are detected. Heading away from the camera (in the visible traffic lanes), there are approximately 15 vehicles, including several cars and scooters. Heading towards the camera, there are about 8 vehicles visible, primarily cars and a few motorcycles. The traffic flow appears continuous along the visible road stretch.",
+        "traffic_density_description": "Medium. While there is a significant number of vehicles present, they are not tightly packed bumper-to-bumper. Vehicle spacing allows for moderate movement, suggesting the traffic is moving, though not entirely free-flowing. The road capacity seems moderately utilized, characteristic of a busy urban artery during what appears to be morning or early daytime traffic.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears orderly, with vehicles adhering to the lane structure visible in the frame."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 2200,
+      "timestamp_sec": 73.33,
+      "frame_file": "frame_002200.jpg",
+      "inference_time_sec": 6.96,
+      "analysis": {
+        "traffic_description": "There is a moderate volume of traffic visible in the scene. A total of 15 vehicles have been detected and segmented by the blue masks. The vehicles include several cars, a few motorcycles, and potentially one or two smaller vans/trucks in the distance. Most vehicles are moving along the main asphalt road, which appears to be a multi-lane thoroughfare. The flow seems generally organized, with vehicles distributed across the visible lanes. The movement direction is primarily away from the camera.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough to allow for continuous movement, indicating that traffic is flowing smoothly without being stop-and-go, but there is a consistent presence of vehicles utilizing the road capacity. The spacing is moderate, suggesting typical busy urban flow rather than free-flowing or congested conditions.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The traffic appears to be moving under normal operational conditions. The general safety condition seems standard, though caution is advised due to the presence of street barriers and signage on the roadside."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 2400,
+      "timestamp_sec": 80.0,
+      "frame_file": "frame_002400.jpg",
+      "inference_time_sec": 6.9,
+      "analysis": {
+        "traffic_description": "There is a moderate volume of traffic visible on the multi-lane road. A total of 15 vehicles were detected and segmented. These vehicles include several cars (e.g., a white sedan in the left lane, and others further down), motorcycles/scooters (a significant presence, several are moving in the center and right lanes), and at least one small truck or van visible in the distance. Traffic appears to be moving generally away from the viewer in the main lanes. Motorcycles are particularly prominent, navigating around cars.",
+        "traffic_density_description": "Medium. The road is not heavily congested, but there is a steady flow of vehicles utilizing multiple lanes. The spacing between vehicles is relatively consistent, suggesting traffic is moving at a moderate pace rather than being stop-and-go. Road capacity utilization seems to be around 50-60% under current conditions.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears normal, with vehicles following expected traffic patterns."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 2600,
+      "timestamp_sec": 86.67,
+      "frame_file": "frame_002600.jpg",
+      "inference_time_sec": 8.29,
+      "analysis": {
+        "traffic_description": "There are 16 vehicles detected in the scene. On the left side of the two-lane road, there are approximately 4 cars (white, dark SUV/car) and 2 motorcycles. On the right side, moving away from the camera, there are 5 to 6 vehicles including several cars and at least 2 motorcycles. Further down the road, near the background, there are an additional 5 to 7 vehicles visible in various lanes, including what appears to be a small truck or larger vehicle near the center-right. Traffic appears to be moving generally away from the camera in the main lanes.",
+        "traffic_density_description": "Medium. The vehicles are spaced out reasonably along the road, and while there is a steady flow of traffic, vehicles are not bumper-to-bumper. The road capacity utilization is estimated to be around 50-60%. Traffic appears to be moving freely or at a moderate pace without significant signs of stop-and-go movement.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The road appears clear of accidents, stalled vehicles, or illegal obstructions. General safety condition seems normal for the observed traffic flow."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 2800,
+      "timestamp_sec": 93.33,
+      "frame_file": "frame_002800.jpg",
+      "inference_time_sec": 5.96,
+      "analysis": {
+        "traffic_description": "There are 16 vehicles detected in the traffic scene, all highlighted with blue masks. The vehicles include several cars, motorcycles, and scooters. Most traffic is moving away from the camera along the multi-lane road. Vehicles are distributed across the lanes; for instance, several cars and motorcycles are visible in the left lanes moving forward, while other vehicles are further down the road. The flow appears generally unimpeded, with vehicles occupying the main carriageway.",
+        "traffic_density_description": "Medium. The vehicles are spread out along the visible stretch of road, and while there is a consistent presence of traffic, there are noticeable gaps between most vehicles. The road capacity is utilized moderately, suggesting a steady, free-flowing traffic pattern rather than stop-and-go or gridlock.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The traffic flow appears orderly, and the general safety condition is good, with vehicles adhering to the observed lanes."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 3000,
+      "timestamp_sec": 100.0,
+      "frame_file": "frame_003000.jpg",
+      "inference_time_sec": 6.8,
+      "analysis": {
+        "traffic_description": "There is a moderate volume of traffic visible in the scene. A total of 17 vehicles were detected based on the blue segmentation masks. The vehicles consist primarily of cars (at least 13), with several motorcycles/scooters (around 3-4) visible, and no clearly distinguishable trucks or buses in the current view. Traffic is moving away from the camera down a main thoroughfare. Vehicles are distributed across one or two visible lanes, with some clustered further down the road. The flow appears generally forward in the visible direction.",
+        "traffic_density_description": "Medium. The spacing between the vehicles is somewhat consistent, indicating active traffic flow but not immediate gridlock. The road capacity utilization appears to be around 50-65%. Traffic seems to be moving at a steady, non-stop pace, characteristic of moderate urban flow.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears normal, with vehicles adhering to the visible roadway."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 3200,
+      "timestamp_sec": 106.67,
+      "frame_file": "frame_003200.jpg",
+      "inference_time_sec": 8.21,
+      "analysis": {
+        "traffic_description": "There are a total of 20 blue-masked vehicles detected in the scene. The vehicles are predominantly cars, with several motorcycles and a few other types visible. Traffic is moving away from the camera into the distance along the main road. Vehicles are distributed across the visible lanes, with some closer to the curb and others further out. The flow direction appears to be generally away from the viewer. Specific vehicles include multiple passenger cars, several motorcycles interspersed among cars, and no clearly identifiable large trucks or buses in immediate view, although the total count suggests a mix of vehicle sizes.",
+        "traffic_density_description": "Medium. The vehicles are spaced reasonably apart, allowing for moderate flow, but the volume of traffic suggests the road capacity is being utilized significantly. The traffic appears to be moving at a moderate speed, not entirely free-flowing, but not exhibiting signs of stop-and-go congestion either. The density is not high enough to be considered congested at this moment.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The road appears to be in a generally safe condition, with vehicles adhering to the flow of traffic observed in the captured frame."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 3400,
+      "timestamp_sec": 113.33,
+      "frame_file": "frame_003400.jpg",
+      "inference_time_sec": 7.11,
+      "analysis": {
+        "traffic_description": "There are 16 vehicles detected in the frame. These vehicles include multiple passenger cars (the most numerous type), several motorcycles/scooters, and a few vans or smaller trucks visible further down the road. The majority of traffic is moving away from the camera along the main road. Motorcycles are prevalent, especially in the center and near the curb. Vehicles are generally using the lanes flowing away from the viewer, with some vehicles parked or moving slowly near the side.",
+        "traffic_density_description": "Medium. The vehicles are spaced reasonably well, allowing for decent movement, but the presence of many motorcycles and cars clustered in the travel lanes suggests moderate utilization of road capacity. Traffic appears to be flowing, though not entirely free-flowing, as some vehicles are closely following others.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The traffic appears to be flowing in an organized manner, and no immediate safety hazards like accidents or illegal crossings are visible."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 3600,
+      "timestamp_sec": 120.0,
+      "frame_file": "frame_003600.jpg",
+      "inference_time_sec": 7.75,
+      "analysis": {
+        "traffic_description": "There are a total of 17 vehicles detected in the scene via blue masks. The vehicles include several cars, numerous motorcycles/scooters, and possibly one or two small trucks/vans. On the main thoroughfare, traffic is moving generally away from the camera. Multiple cars are visible in the lanes. In the foreground on the left, there is a cart pulled by an animal, which is not blue-masked but represents road activity. Most vehicles appear to be in motion or queued in the lanes.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough to suggest moderate flow, but several vehicles are clustered in the central area, indicating moderate utilization of the available road capacity. The traffic flow appears to be moving, although not entirely free-flowing, suggesting typical urban merging or moderate speed conditions.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears normal, with vehicles following standard traffic patterns, although the presence of a non-standard cart on the edge of the road is noted."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 3800,
+      "timestamp_sec": 126.67,
+      "frame_file": "frame_003800.jpg",
+      "inference_time_sec": 8.93,
+      "analysis": {
+        "traffic_description": "There are 14 blue-masked vehicles detected in the traffic scene. The vehicles include several cars, motorcycles, and at least one small truck or van. The primary flow appears to be moving away from the camera into the distance along the main road. Vehicles are utilizing both lanes visible in the frame. Key vehicles include a dark sedan prominently featured in the foreground center, and several other cars and two-wheeled vehicles distributed further up the road. Traffic movement seems generally coordinated, although some vehicles are positioned closer to the roadside.",
+        "traffic_density_description": "Medium. The vehicles are spread out enough to suggest a moderate flow rather than heavy congestion. While there are several vehicles present, they are not bumper-to-bumper, allowing for visible gaps between many vehicles. The road capacity is being utilized noticeably but not at maximum saturation. The traffic appears to be moving at a relatively consistent, albeit not necessarily free-flowing, pace.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears adequate, with vehicles adhering to the flow of traffic observed. No accidents, wrong-way driving, or pedestrians in the roadway are visible."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 4000,
+      "timestamp_sec": 133.33,
+      "frame_file": "frame_004000.jpg",
+      "inference_time_sec": 8.22,
+      "analysis": {
+        "traffic_description": "The scene shows a multi-lane urban road with traffic moving generally away from the camera. A total of 16 vehicles are visible, all highlighted with blue masks. This includes a mix of passenger cars (most prominent), several motorcycles/scooters, and a few other vehicles. The primary flow is in the lane closest to the camera, while a smaller stream of traffic is visible in the opposite direction further down the road. Vehicles are distributed across the visible lanes, suggesting mixed traffic flow.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough that they are not bumper-to-bumper, allowing for relatively smooth movement in the foreground lane. Road capacity utilization is estimated to be around 50-65%. The traffic appears to be free-flowing to slightly slow-moving, typical of a moderately busy urban arterial road during daytime.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The traffic flow appears orderly, and vehicles are maintaining proper lane discipline based on the segmentation masks. The general safety condition appears acceptable, although standard urban hazards like pedestrians or debris are not clearly visible or flagged by the masks."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 4200,
+      "timestamp_sec": 140.0,
+      "frame_file": "frame_004200.jpg",
+      "inference_time_sec": 6.95,
+      "analysis": {
+        "traffic_description": "There are a total of 16 vehicles detected in the scene. This includes multiple cars, several motorcycles, and at least one bus or large van visible in the distance. The vehicles are distributed across the road. The traffic flow appears to be moving generally away from the camera viewpoint in the right lane, and some vehicles are moving in the opposite direction in the left lanes. The road has multiple lanes, and most vehicles are adhering to lane markings, though density is moderate.",
+        "traffic_density_description": "Medium. The vehicles are spaced somewhat evenly, indicating active traffic flow without significant stopping or heavy backup. The road capacity utilization seems to be around 60-70%. Traffic appears to be moving at a steady, moderate speed, characteristic of a typical urban arterial road during daytime hours.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The road appears safe with standard traffic operations, although the roadside curb area has some temporary construction or debris, which is outside the main traffic flow."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 4400,
+      "timestamp_sec": 146.67,
+      "frame_file": "frame_004400.jpg",
+      "inference_time_sec": 7.94,
+      "analysis": {
+        "traffic_description": "There are 17 vehicles detected in the scene. The majority of the vehicles are moving or stopped along the main asphalt road, which appears to be a multi-lane artery. From the left side of the image, there is a flow of vehicles moving away from the camera. Identified vehicles include multiple cars, several motorcycles/scooters, and at least one small truck or van visible further down the road. One white SUV is clearly visible in the left lane. Motorcycles are present both in the main traffic flow and on the roadside pavement area near the foreground.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough to allow movement, but the volume is significant for the visible road width. The flow appears relatively steady rather than gridlocked, suggesting moderate urban traffic that is moving, though not entirely free-flowing.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears standard for an urban environment, though there are several people on the sidewalk/curb area in the foreground, which is typical urban activity."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 4600,
+      "timestamp_sec": 153.33,
+      "frame_file": "frame_004600.jpg",
+      "inference_time_sec": 6.29,
+      "analysis": {
+        "traffic_description": "There are a total of 17 vehicles detected in the scene. The vehicles include a mix of cars, motorcycles, and potentially small trucks/vans. On the main road, vehicles are traveling generally away from the camera. Specific visible vehicles include several white cars (sedans/SUVs) and numerous motorcycles. The vehicles are distributed across the visible lanes, indicating active traffic flow. Most vehicles appear to be in motion.",
+        "traffic_density_description": "Medium. The vehicles are spread out enough to allow for moderate spacing, and the road capacity does not appear to be fully utilized, although there is continuous movement. Traffic appears to be flowing steadily without signs of severe congestion or stop-and-go conditions in the visible lanes.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears normal, with vehicles adhering to the flow of traffic observed."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 4800,
+      "timestamp_sec": 160.0,
+      "frame_file": "frame_004800.jpg",
+      "inference_time_sec": 8.33,
+      "analysis": {
+        "traffic_description": "There is a total of 19 vehicles detected in the scene, all highlighted with blue masks. On the main road, there are several cars and one visible motorcycle moving away from the camera. In the left lane, there are at least three passenger cars, one white SUV, and one other light-colored vehicle. In the center and right lanes further down the road, there are several other cars and motorcycles interspersed. On the sidewalk/shoulder area to the right, there are a few more clustered vehicles, including what appears to be a small truck or van. The general movement appears to be away from the viewpoint along the multi-lane road.",
+        "traffic_density_description": "Medium. The vehicles are present in multiple lanes but are not bumper-to-bumper. There is moderate spacing between vehicles, indicating a steady flow rather than gridlock. Road capacity utilization seems to be around 50-65%, suggesting moderate urban traffic flow conditions.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The traffic flow appears orderly, and all vehicles are observed within the designated roadway lanes. General safety condition seems adequate based on the visible frame."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 5000,
+      "timestamp_sec": 166.67,
+      "frame_file": "frame_005000.jpg",
+      "inference_time_sec": 7.88,
+      "analysis": {
+        "traffic_description": "There are 18 vehicles detected in the scene, based on the blue segmentation masks. The vehicles are mixed, consisting primarily of cars, motorcycles, and a few other types. Most vehicles are traveling away from the camera in the main traffic lane. Specific observations include several motorcycles weaving through traffic, and multiple cars distributed across the visible road width. Traffic appears to be moving in at least one primary direction away from the viewer.",
+        "traffic_density_description": "Medium. The vehicles are spaced reasonably well, but there is a noticeable concentration of vehicles in the central lanes, indicating moderate utilization of road capacity. The traffic flow appears to be moving steadily, not heavily congested or stop-and-go, suggesting smooth but not entirely free-flowing movement typical of an urban arterial road during morning hours.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The traffic flow appears orderly, with vehicles maintaining lane discipline as far as is visible. The general safety condition seems acceptable based on the current frame."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 5200,
+      "timestamp_sec": 173.33,
+      "frame_file": "frame_005200.jpg",
+      "inference_time_sec": 6.85,
+      "analysis": {
+        "traffic_description": "There are 17 vehicles detected in the scene, highlighted by blue masks. The majority are two-wheeled vehicles (motorcycles/scooters), and several cars and one small truck or van are also visible. The traffic appears to be moving generally away from the camera in the main road. Vehicles are distributed across multiple lanes; for example, several scooters are in the foreground lane, while cars and trucks are further up the road. The movement pattern suggests moderate flow with mixed traffic types.",
+        "traffic_density_description": "Medium. The vehicles are spaced reasonably apart, allowing for continuous movement, but the number of motorcycles and cars present indicates a moderate utilization of the road capacity. Traffic appears to be flowing freely at this moment rather than being congested or stop-and-go.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears normal for the observed traffic flow."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 5400,
+      "timestamp_sec": 180.0,
+      "frame_file": "frame_005400.jpg",
+      "inference_time_sec": 6.75,
+      "analysis": {
+        "traffic_description": "There are 20 vehicles detected in the traffic scene. The vehicles are predominantly cars and motorcycles, with a few other types present. In the main lanes moving away from the camera, there are several cars and motorcycles spread out. On the side or in slower-moving lanes, more motorcycles and cars are visible. The overall traffic flow appears to be moving away from the viewpoint, using multiple lanes. The density of motorcycles is noticeably higher than cars in some sections.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough to allow for moderate flow, but the concentration of vehicles, especially motorcycles, suggests utilization of road capacity is significant. Traffic appears to be moving at a relatively steady, though not necessarily free-flowing, pace, characteristic of typical urban daytime traffic.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears normal based on the visible traffic patterns and vehicle positioning."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 5600,
+      "timestamp_sec": 186.67,
+      "frame_file": "frame_005600.jpg",
+      "inference_time_sec": 6.82,
+      "analysis": {
+        "traffic_description": "There are 15 vehicles detected in the traffic scene. The vehicles are moving along a multi-lane urban road. From the perspective of the camera, traffic flows away into the distance. The vehicles include several passenger cars (majority), at least one white minivan/SUV, and a few motorcycles scattered in the lanes. The overall traffic appears to be moving in a generally consistent direction, utilizing the main thoroughfare.",
+        "traffic_density_description": "Medium. The vehicles are spaced out enough that they are not bumper-to-bumper, but the flow is not completely free-flowing either; there is a moderate grouping, suggesting typical urban flow rather than heavy congestion. Road capacity utilization is estimated at around 50-60% based on current spacing.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The general safety condition appears standard for an active urban roadway."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 5800,
+      "timestamp_sec": 193.33,
+      "frame_file": "frame_005800.jpg",
+      "inference_time_sec": 6.78,
+      "analysis": {
+        "traffic_description": "The traffic scene captures a multi-lane urban road with moderate vehicle presence. Based on the blue segmentation masks, there are 17 discernible vehicles. These include several cars, multiple motorcycles/scooters, and at least one small van or light truck visible further down the road. Traffic appears to be flowing generally away from the viewer in the visible lanes, with vehicles occupying various positions along the road. Motorcycle traffic is noticeable in the central lanes, characteristic of busy urban environments.",
+        "traffic_density_description": "Medium. The vehicles are moderately spaced, allowing for consistent movement, but the number of vehicles relative to the visible road capacity suggests the flow is not entirely free-flowing. It appears to be a steady, moderate traffic stream rather than stop-and-go congestion.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The road appears generally safe with vehicles adhering to the flow of traffic as observed in the frame."
+      },
+      "error": null
+    },
+    {
+      "frame_index": 6000,
+      "timestamp_sec": 200.0,
+      "frame_file": "frame_006000.jpg",
+      "inference_time_sec": 6.65,
+      "analysis": {
+        "traffic_description": "There are a total of 17 blue-masked vehicles detected in the scene. The vehicles include several cars, motorcycles, and possibly some smaller trucks or vans. Most traffic appears to be moving along a multi-lane road, with vehicles distributed across multiple lanes. In the foreground and middle ground, there are several motorcycles clustered or moving in the middle/right portion of the road. Cars are visible in the left lanes moving away from the camera. The traffic flow direction is generally away from the viewer on the main carriageway.",
+        "traffic_density_description": "Medium. The vehicles are present but are not closely packed, suggesting moderate utilization of road capacity. There is no immediate evidence of long queues or stop-and-go traffic, indicating a relatively free-flowing to slightly congested flow typical for an urban artery during this time.",
+        "traffic_abnormal_incident_description": "No abnormal incidents detected. The road appears safe with standard traffic patterns observed; no accidents, illegal parking, or unusual obstructions are visible."
+      },
+      "error": null
+    }
+  ]
+}
