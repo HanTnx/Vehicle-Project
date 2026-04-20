@@ -50,6 +50,7 @@ SAM3 auto-labels video frames with the text prompt `"vehicle"`, then YOLOv26s is
 - **Model:** YOLOv26s (9.9M params) with COCO pretrained weights
 - **Dataset:** 422 train / 120 valid / ~60 test images (auto-labeled, split 70/20/10)
 - **Result:** mAP@0.5 = **95.6%**, Precision = 91.3%, Recall = 90.1%, Inference = 4.1 ms/image
+-  Annotated output video (`detection_output_v2.mp4`)
 
 ### 1.2 Vehicle Type Classifier + Pipeline (`1.2.vehicle_classification.ipynb`)
 
@@ -59,7 +60,7 @@ CLIP ViT-L/14 is fine-tuned on two open-source datasets (Car-1000 + Vehicle-10) 
 - **Dataset:** 10,485 train / 900 valid / 450 test images
 - **Classes:** Bus, MPV, SUV, Sedan, Sports Car, Truck, Van, Bicycle, Motorcycle
 - **Result:** Validation accuracy = **91.33%**
-- **Pipeline:** YOLOv26s detect → crop → CLIP classify → annotated output video (`detection_output_v2.mp4`)
+- **Pipeline:** YOLOv26s detect → crop → CLIP classify → annotated output video (`detection_classifier_clip_output_v2.mp4`)
 
 ## Part 2 — Adversarial Attack (`2.adversarial_attacks.ipynb`)
 
